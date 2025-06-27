@@ -2,7 +2,7 @@ import Filter from "@/src/_components/Filter";
 import ProductList from "@/src/_components/ProductList";
 
 import { getAllProducts } from "@/src/_lib/data-service";
-import { Suspense } from "react";
+
 
 interface Product {
   id: number;
@@ -61,15 +61,9 @@ export default async function Page({
     <div className="flex w-full flex-col p-10 md:flex-row md:items-start md:justify-between">
       <Filter />
       <div className="flex w-full flex-wrap justify-center gap-10 md:justify-end">
-        <Suspense
-          fallback={
-            <div className="flex items-center justify-center text-4xl">
-              Loading...
-            </div>
-          }
-        >
+        
           <ProductList products={filteredProducts} />
-        </Suspense>
+       
       </div>
     </div>
   );
