@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🖤 BlackLuxe Store
 
-## Getting Started
+A sleek, modern **dark-themed e-commerce platform** built with Next.Js & Typescript and powerful admin tools. Customers can explore luxury products, manage carts and wishlists, and seamlessly checkout. Admins have full control via a secure dashboard to manage inventory, orders, and users.
 
-First, run the development server:
+## ✨ Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 🛍️ User-Facing Features
+- Elegant **dark mode design**
+- Browse & view products with full details
+- Add to **Cart** and **Wishlist**
+- User **authentication** (signup / login)
+- Smooth **Checkout flow**
+- Responsive across devices
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🔐 Admin Dashboard
+- Add / Edit / Delete products
+- View & manage user orders
+- Admin authentication & protection
+- Real-time updates with Supabase
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<h3> live Demo </h3>
+You can view the live demo of the BlackLuxe
+https://blackluxe.vercel.app/
+Feel free to explore the app and see the features in action!
