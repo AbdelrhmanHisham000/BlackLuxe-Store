@@ -42,14 +42,16 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page(pageProps: {
-  params: Promise<PageProps["params"]>;
-  searchParams: Promise<PageProps["searchParams"]>;
-}) {
-  const { category } = await pageProps.params;
-  const { category: filterCategory } = await pageProps.searchParams;
 
-  
+
+
+export default async function Page({
+  params,
+  searchParams,
+}: PageProps) {
+  const { category } = params;
+  const filterCategory = searchParams?.category;
+
   const products = await getAllProducts<Product>(category);
   const filteredProducts = !filterCategory
     ? products
