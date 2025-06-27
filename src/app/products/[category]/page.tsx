@@ -47,21 +47,30 @@ export async function generateStaticParams() {
 
 export default async function Page({ params, searchParams }: PageProps) {
   const { category } = params;
-  const filterCategory = searchParams?.category;
- // Debugging logs (they'll appear in server logs)
-  console.log("🧠 category param:", category);
-  const products = await getAllProducts<Product>(category);
-   console.log("✅ products fetched:", products.length);
-  const filteredProducts = !filterCategory
-    ? products
-    : products.filter((prod) => prod.category_name === filterCategory);
+  console.log("🏷️ Category param:", category);
 
-  return (
-    <div className="flex w-full flex-col p-10 md:flex-row md:items-start md:justify-between">
-      <Filter />
-      <div className="flex w-full flex-wrap justify-center gap-10 md:justify-end">
-        <ProductList products={filteredProducts} />
+  try {
+    const products = await getAllProducts<Product>(category);
+    console.log(`✅ Fetched ${products.length} products for category "${category}"`);
+
+    if (!products) throw new Error("getAllProducts returned null or undefined");
+
+    const filteredProducts = searchParams.category
+      ? products.filter(prod => prod.category_name === searchParams.category)
+      : products;
+
+    return (
+      <div className="flex w-full flex-col p-10 md:flex-row md:items-start md:justify-between">
+        {/* ... UI */}
       </div>
-    </div>
-  );
+    );
+  } catch (err) {
+    console.error("❌ Error in /products/[category]:", err);
+    return (
+      <div style={{ color: "red", padding: 20 }}>
+        Server Error: {(err as Error).message}
+      </div>
+    );
+  }
 }
+
