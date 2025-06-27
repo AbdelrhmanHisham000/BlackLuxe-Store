@@ -1,3 +1,5 @@
+
+
 import ProductOverview from "@/src/_components/ProductOverview";
 import Slider from "@/src/_components/Slider";
 import { auth } from "@/src/_lib/auth";
@@ -41,32 +43,33 @@ export default async function Page({
 }: {
   params: Promise<{ category: string; productName: string }>;
 }) {
-  const session = await auth()
+  const session = await auth();
   const { category, productName } = await params;
 
   const products = await getAllProducts<Product>(category);
 
-const theProduct = products?.find(
-  (product) =>
-    product.title.trim().toLowerCase() ===
-    decodeURIComponent(productName).trim().toLowerCase()
-);
+  const theProduct = products?.find(
+    (product) =>
+      product.title.trim().toLowerCase() ===
+      decodeURIComponent(productName).trim().toLowerCase(),
+  );
 
   if (!theProduct) {
     return <div>Product not found</div>;
   }
-  if (!session) {
-    return <div className="text-white p-6">Please sign in to view your wishlist.</div>;
-  }
 
-// Convert userId to string
-  const sessionForProduct = {
-    user: {
-      userId: String(session.user.userId),
-    },
-  };
+  // Only pass session info if logged in, otherwise it's undefined
+  const sessionForProduct = session
+    ? {
+        user: {
+          userId: String(session.user.userId),
+        },
+      }
+    : undefined;
+
   return (
     <>
+      {/* @ts-ignore */}
       <ProductOverview theProduct={theProduct} session={sessionForProduct} />
       <div className="m-8">
         <Slider products={products} />
