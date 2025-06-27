@@ -45,14 +45,13 @@ export async function generateStaticParams() {
 
 
 
-export default async function Page({
-  params,
-  searchParams,
-}: PageProps) {
+export default async function Page({ params, searchParams }: PageProps) {
   const { category } = params;
   const filterCategory = searchParams?.category;
-
+ // Debugging logs (they'll appear in server logs)
+  console.log("🧠 category param:", category);
   const products = await getAllProducts<Product>(category);
+   console.log("✅ products fetched:", products.length);
   const filteredProducts = !filterCategory
     ? products
     : products.filter((prod) => prod.category_name === filterCategory);
@@ -61,9 +60,7 @@ export default async function Page({
     <div className="flex w-full flex-col p-10 md:flex-row md:items-start md:justify-between">
       <Filter />
       <div className="flex w-full flex-wrap justify-center gap-10 md:justify-end">
-        
-          <ProductList products={filteredProducts} />
-       
+        <ProductList products={filteredProducts} />
       </div>
     </div>
   );
