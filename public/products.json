@@ -1,0 +1,102 @@
+{
+  "Men": [
+    {
+      "image": "/Products/Men-Watch-3.jpeg",
+      "title": "Sporty Chronograph",
+      "price": "110",
+      "category": "Watches"
+    },
+    {
+      "image": "/Products/Men-Watch-1.jpeg",
+      "title": "Luxury Silver Watch",
+      "price": "120",
+      "category": "Watches"
+    },
+    {
+      "image": "/Products/dark-tshirt 5.jpeg",
+      "title": "Casual Wear Tee",
+      "price": "72",
+      "category": "T-shirts"
+    },
+    {
+      "image": "/Products/dark-tshirt 2.jpeg",
+      "title": "Urban Fit T-Shirt",
+      "price": "70",
+      "category": "T-shirts"
+    },
+    {
+      "image": "/Products/Men-Watch-2.jpeg",
+      "title": "Classic Black Dial",
+      "price": "130",
+      "category": "Watches"
+    },
+    {
+      "image": "/Products/dark-tshirt 1.jpeg",
+      "title": "Classic Black",
+      "price": "60",
+      "category": "T-shirts"
+    },
+    {
+      "image": "/Products/Men-Watch-4.jpeg",
+      "title": "Elegant Gold",
+      "price": "140",
+      "category": "Watches"
+    },
+    {
+      "image": "/Products/dark-tshirt 7.jpeg",
+      "title": "Relaxed Style Tee",
+      "price": "67",
+      "category": "T-shirts"
+    }
+  ],
+  "Women": [
+    {
+      "image": "/Products/Women-Dress-3.jpeg",
+      "title": "Elegant Evening Gown",
+      "price": "150",
+      "category": "Dresses"
+    },
+    {
+      "image": "/Products/Women-Watch-2.jpeg",
+      "title": "Diamond-Studded Watch",
+      "price": "150",
+      "category": "Watches"
+    },
+    {
+      "image": "/Products/bag-2.jpeg",
+      "title": "Elegant Tote Bag",
+      "price": "100",
+      "category": "Bags"
+    },
+    {
+      "image": "/Products/Women-Dress-4.jpeg",
+      "title": "Classic Black Dress",
+      "price": "120",
+      "category": "Dresses"
+    },
+    {
+      "image": "/Products/Women-Watch-3.jpeg",
+      "title": "Minimalist Silver Watch",
+      "price": "140",
+      "category": "Watches"
+    },
+    {
+      "image": "/Products/Shoe-1.jpeg",
+      "title": "High Heel Stiletto",
+      "price": "120",
+      "category": "Shoes"
+    },
+    {
+      "image": "/Products/Women-Dress-1.jpeg",
+      "title": "Floral Maxi Dress",
+      "price": "90",
+      "category": "Dresses"
+    },
+    {
+      "image": "/Products/bag-4.jpeg",
+      "title": "Casual Crossbody Bag",
+      "price": "85",
+      "category": "Bags"
+    }
+  ]
+}
