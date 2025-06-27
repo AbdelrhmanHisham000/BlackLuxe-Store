@@ -59,11 +59,14 @@ export default async function Page({ params, searchParams }: PageProps) {
       ? products.filter(prod => prod.category_name === searchParams.category)
       : products;
 
-    return (
-      <div className="flex w-full flex-col p-10 md:flex-row md:items-start md:justify-between">
-        {/* ... UI */}
+   return (
+    <div className="flex w-full flex-col p-10 md:flex-row md:items-start md:justify-between">
+      <Filter />
+      <div className="flex w-full flex-wrap justify-center gap-10 md:justify-end">
+        <ProductList products={filteredProducts} />
       </div>
-    );
+    </div>
+  );
   } catch (err) {
     console.error("❌ Error in /products/[category]:", err);
     return (
