@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic"; // ⬅️ ADD THIS
 import Filter from "@/src/_components/Filter";
 import ProductList from "@/src/_components/ProductList";
 
