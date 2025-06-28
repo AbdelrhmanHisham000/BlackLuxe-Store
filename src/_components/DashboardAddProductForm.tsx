@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
+import MiniSpinner from "./MiniSpinner";
 
 type ProductPayload = {
   title: string;
@@ -45,7 +46,8 @@ export default function DashboardAddProductForm({
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+
+    formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
   });
@@ -183,7 +185,7 @@ export default function DashboardAddProductForm({
         type="submit"
         className="rounded bg-green-600 px-4 py-2 text-white hover:bg-green-700"
       >
-        {buttonText}
+        {isSubmitting ? "Submitting..." : buttonText}
       </button>
     </form>
   );
